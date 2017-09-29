@@ -20,6 +20,10 @@ function calculate() {
     // ==========================================
     // Todo: Perform conversion calculations here
 
+    var weightConv = weight * 0.454;
+    var heightConvCM = height * 2.54;
+    var heightConvM = hight * 0.0254;
+
     // -------------------------------
     // Body Surface Area (BSA)
     // -------------------------------
@@ -28,6 +32,8 @@ function calculate() {
 
     // ==========================================
     // Todo: Perform BSA calculation here
+
+    BSA = sqrt((heightConvCM * weightConv)/3600);
 
     // -------------------------------
     // Ideal Body Weight (IBW)
@@ -40,11 +46,14 @@ function calculate() {
         // ==========================================
         // Todo: Perform female IBW calculation here
 
+        IBW = (heightConvCM - 60) * (45.5 + 2.3);
 
     } else if ( male ) {
 
         // ==========================================
         // Todo: Perform male IBW calculation here
+
+        IBW = (heightConvCM - 60) * (50 + 2.3);
 
     }
 
@@ -56,6 +65,8 @@ function calculate() {
 
     // ==========================================
     // Todo: Perform BMI calculation here
+
+    BMI = weightConv / (heightConvM^2);
 
 
 
